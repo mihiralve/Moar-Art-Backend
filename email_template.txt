@@ -1,0 +1,9 @@
+Inquiry about {Art Piece Name}
+
+Customer Information:
+
+Name: {name}
+Email: {email address}
+Zip: {zip}
+
+Message: {message body}
