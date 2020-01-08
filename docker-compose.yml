@@ -1,0 +1,22 @@
+version: '2'
+
+networks: 
+  web:
+    external: true
+
+services:
+  meera-art-backend:
+    build: .
+    restart: always
+    volumes:
+      - ./src/:/app/src/
+    ports: 
+      - "5000:5000"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=web"
+      - "traefik.backend=api-moarart"
+      - "traefik.frontend.rule=Host:api.mihiralve.com"
+      - "traefik.port=5000"
+    networks:
+      - web

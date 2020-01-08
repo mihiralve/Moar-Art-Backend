@@ -1,9 +1,9 @@
-Inquiry about {Art Piece Name}
+Inquiry about %piece_name%
 
 Customer Information:
 
-Name: {name}
-Email: {email address}
-Zip: {zip}
+Name: %name%
+Email: %email%
+Zip: %zip%
 
-Message: {message body}
+Message: %message%

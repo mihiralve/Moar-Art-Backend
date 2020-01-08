@@ -1,0 +1,1 @@
+docker build -t meera-art-backend:latest -f Dockerfile .
