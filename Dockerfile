@@ -8,6 +8,5 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 COPY . /app
-ENTRYPOINT [ "python" ]
-CMD [ "server.py" ]
+CMD ["uwsgi", "--http-socket", ":5000", "--module", "server:app"]
 EXPOSE 5000
