@@ -43,7 +43,3 @@ def fill_email(email_text, data):
     email_text = re.sub("%message%", data['message'], email_text)
 
     return email_text
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
