@@ -1,8 +1,9 @@
-from PIL import Image, ImageDraw, ImageFont
+import os
+from PIL import Image
 
-def add_watermark(photo_infile):
+def add_watermark(photo_infile, photo_outfile):
     photo = Image.open(photo_infile)
-    watermark = Image.open("./watermark_white.png")
+    watermark = Image.open("images/watermark_white.png")
 
     watermark_height, watermark_width = watermark.height, watermark.width
     new_watermark_height = photo.height/3
@@ -14,6 +15,15 @@ def add_watermark(photo_infile):
 
     photo.paste(watermark, position, watermark)
 
-    photo.show()
+    photo.save(photo_outfile)
 
-add_watermark("./full/blauet.jpg")
+def process_folder(folder):
+    filenames = os.listdir(folder)
+    for i in filenames:
+        print(folder+i)
+        add_watermark(folder+i, "static/"+ folder + i)
+
+process_folder("images/high/")
+
+
+
