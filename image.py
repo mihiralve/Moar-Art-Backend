@@ -7,12 +7,12 @@ def add_watermark(photo_infile):
     watermark = Image.open("images/watermark_white.png")
 
     watermark_height, watermark_width = watermark.height, watermark.width
-    new_watermark_height = photo.height/3
+    new_watermark_height = photo.height/2
 
     watermark = watermark.resize(((int(new_watermark_height), int((watermark_height/watermark_width)*new_watermark_height))))
     watermark.convert("RGBA")
 
-    position = ((photo.width - watermark.width), (photo.height - watermark.height))
+    position = ((int(photo.width/2) - int(watermark.width/2)), int(photo.height*(2/3)))
 
     photo.paste(watermark, position, watermark)
 
@@ -38,7 +38,7 @@ def process_folder(sizes):
         for i in filenames:
             process_photo(base_folder+i, "static/images/"+ folder_size + "/" + i, photo_size, thumb_size)
 
-sizes = [("high", 750, 500), ("med", 500, 300)]
+sizes = [("high", 750, 500), ("med", 500, 300), ("low", 350, 200)]
 
 process_folder(sizes)
 
