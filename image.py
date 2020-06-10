@@ -3,6 +3,7 @@ from PIL import Image
 
 def add_watermark(photo_infile):
     photo = Image.open(photo_infile)
+    thumb = photo.copy()
     watermark = Image.open("images/watermark_white.png")
 
     watermark_height, watermark_width = watermark.height, watermark.width
@@ -15,11 +16,10 @@ def add_watermark(photo_infile):
 
     photo.paste(watermark, position, watermark)
 
-    return photo
+    return photo, thumb
 
 def process_photo(photo_infile, photo_outfile, photo_size, thumb_size):
-    watermarked = add_watermark(photo_infile)
-    thumb = watermarked.copy()
+    watermarked, thumb = add_watermark(photo_infile)
     
     watermarked.thumbnail((photo_size, photo_size))
     watermarked.save(photo_outfile)
