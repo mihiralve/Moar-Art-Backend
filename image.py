@@ -4,7 +4,7 @@ from PIL import Image
 def add_watermark(photo_infile):
     photo = Image.open(photo_infile)
     thumb = photo.copy()
-    watermark = Image.open("images/watermark_white.png")
+    watermark = Image.open("images/watermark.png")
 
     watermark_height, watermark_width = watermark.height, watermark.width
     new_watermark_height = photo.height/2
@@ -33,7 +33,7 @@ def process_photo(photo_infile, photo_outfile, photo_size, thumb_size):
 def process_folder(sizes):
     for s in sizes:
         folder_size, photo_size, thumb_size = s
-        base_folder = "images/full_nt/"
+        base_folder = "images/full/"
         filenames = os.listdir(base_folder)
         for i in filenames:
             process_photo(base_folder+i, "static/images/"+ folder_size + "/" + i, photo_size, thumb_size)
