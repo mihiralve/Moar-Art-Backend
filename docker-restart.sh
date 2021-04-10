@@ -1,2 +1,2 @@
-./docker-clean.sh
+./docker-build.sh
 docker-compose up -d

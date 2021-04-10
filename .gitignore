@@ -4,3 +4,4 @@ token.pickle
 flask/
 .vscode
 secret_key.txt
+env/

@@ -1,1 +1,1 @@
-docker build -t meera-art-backend:latest -f Dockerfile .
+docker build -t meera-art-backend_meera-art-backend:latest -f Dockerfile .
