@@ -33,7 +33,7 @@ def process_photo(photo_infile, photo_outfile, photo_size, thumb_size):
 def process_folder(sizes):
     for s in sizes:
         folder_size, photo_size, thumb_size = s
-        base_folder = "images/full_nt/"
+        base_folder = "images/full/"
         filenames = os.listdir(base_folder)
         for i in filenames:
             process_photo(base_folder+i, "static/images/"+ folder_size + "/" + i, photo_size, thumb_size)
