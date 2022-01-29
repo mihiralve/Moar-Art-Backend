@@ -40,7 +40,7 @@ def process_folder(sizes):
 
 sizes = [("high", 750, 500), ("med", 500, 300), ("low", 350, 200)]
 
-process_folder(sizes)
+# process_folder(sizes)
 
 
 
